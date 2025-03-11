@@ -1,0 +1,248 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  color: black;
+  background-color: white;
+  }
+  
+  .container {
+    background-color:transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: solid 5px #e6eae9;
+    
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    min-width: 450px;
+    
+    
+}
+
+.container nav{
+  display: flex;
+  position: fixed; /* Hace que el nav se quede fijo en la parte superior */
+  margin-left: 60px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 100%;
+  background-color: transparent;
+  gap:25px;
+  flex-shrink: 0;
+  
+
+  
+
+
+}
+
+.container nav a, .container select {
+ 
+  background-color: transparent;
+  text-decoration: none;
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+  color: #53b7b2;
+  
+  
+  
+}
+
+
+
+.container nav select:nth-of-type(6) {
+  appearance: none;
+  
+
+}
+
+.container select {
+ 
+ 
+  outline: none;
+  font-size: 13px;
+  cursor: pointer;
+  pointer-events: none;
+  
+}
+
+.color-dos {
+  color: #d7999e;
+}
+
+.container nav img {
+  display: none;
+}
+
+
+.container nav a {
+  margin-right: 35px;
+  transition: transform 0.5s ease;
+  position: relative;
+  left: 0;
+  font-weight: bold;
+}
+
+.container .idioma {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  height: 30px;
+  gap: 10px;
+  background-color: #d7999e;
+  border-radius: 5px;
+  padding: 8px;
+  position: absolute; /* Ahora está en posición absoluta */
+  right: 20px; /* Alineado al borde derecho de .container */
+  transition: transform 0.5s ease; /* Para suavizar el movimiento */
+  flex-shrink: 0; /* Evitar que se reduzca de tamaño al cambiar el layout */
+}
+
+.container .idioma select {
+  background-color: transparent;
+  color: white;
+  font-weight: normal;
+  font-size: 11px;
+  text-align: start;
+  width: 80px;
+  height: 30px;
+  border: none;
+  background-image: url(./arrow-down.png);
+  background-repeat: no-repeat;
+  background-position: left 50px center;
+  background-size: 12px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+/* Media queries */
+@media screen and (max-width: 1220px) {
+  
+  .container nav{
+    display: flex;
+    margin-left:20px;
+
+  }
+  
+  .container nav img {
+    display: flex;
+    margin-right: 270px;
+    
+  }
+
+  .container nav a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0; /* No dejes un margen izquierdo grande */
+    transition: transform 0.5s ease; /* Transición suave */
+    left: 0;
+  }
+  
+  .container nav select {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 651px) {
+  .container nav select {
+    display: none;
+  }
+
+  .container nav img {
+    display: flex;
+  }
+
+  .container nav a {
+    display: start;
+    margin-left: -230px;
+    transition: transform 0.5s ease;
+  }
+
+  .container .idioma {
+    display: flex;
+  }
+} 
+
+main {
+  position: relative; /* Asegura que los elementos internos se ubiquen correctamente */
+}
+
+main img {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0; /* Imagen detrás */
+}
+
+main div {
+  position: fixed; /* Para que se queden en la parte baja */
+  width: 200px;
+  height: 100px;
+  background-color: #d7999e;
+  z-index: 10; /* Asegurar que estén sobre la imagen */
+  border: 2px solid black; /* Para visualizar los divs */
+}
+
+
+
+
+main div:nth-child(2) {
+  position: fixed;
+  width: 120px;
+  height: 60px;
+  bottom: 150px;
+  left: 4%;
+  background-color: #d7999e;
+}
+
+main div:nth-child(3) {
+  position: fixed;
+  bottom: 20px;
+  left: 4%;
+  background-color: #d7999e;
+  border-radius: 25%;
+  
+  
+  background-position: center; /* Centra dentro del div */
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+ 
+  
+}
+
+.redi img{
+
+
+  width: 50px;
+  height: auto; /* Mantiene la proporción */
+ 
+
+}
+
+
+main div:nth-child(4) {
+  position: fixed;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  right: 1.5%;
+  background-color: #d7999e;
+  background-image: url('./bokata.png'); /* Ruta de la imagen */
+  background-size: 40px; /* Ajusta la imagen al div */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita repeticiones */
+}
+
